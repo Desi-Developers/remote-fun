@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     sessions: 'employees/sessions'
   }
   resources :employees
+  resources :videos
 end
 
