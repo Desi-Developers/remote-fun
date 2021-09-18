@@ -5,8 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'aws-sdk-s3', '~> 1.103'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.8'
+gem 'dotenv', '~> 2.7', '>= 2.7.6'
 gem 'haml', '~> 5.2', '>= 5.2.2'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '>= 0.18', '< 2.0'
