@@ -13,4 +13,6 @@ class Employee < ApplicationRecord
   has_one_attached :avatar
   has_many :employee_challenges, dependent: :destroy
   has_many :challenges, through: :employee_challenges
+
+  scope :not_challenged_this_month, -> { where.not(id: EmployeeChallenge.for_this_month) }
 end
