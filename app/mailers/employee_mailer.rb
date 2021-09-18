@@ -10,6 +10,6 @@ class EmployeeMailer < ApplicationMailer
   def send_challenge_email(employee, link)
     @employee = employee
     @link = link
-    mail(to: employee.email, subject: "New Challenge link is here")
+    mail(to: employee.email, subject: 'Here is a new challenge for you! (see link)')
   end
 end

@@ -1,3 +1,3 @@
 %p= "Dear #{@employee.name}"
-%p= "Your Challenge Link is here #{@link}"
+%p= "Your Challenge Link is here #{ENV['HOST_URL']}#{@link}"
 %p= "You can now start with your challenge."
