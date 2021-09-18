@@ -1,0 +1,19 @@
+<h1>Home</h1>
+
+Today's Challenge
+
+<p>
+  Name: <%=@activity_for_today.dig(:selected_participants)&.first&.challenge&.name %>
+</p>
+
+<p>
+  Description: <%=@activity_for_today.dig(:selected_participants)&.first&.challenge&.description %>
+</p>
+
+Today's participants
+
+<ul>
+  <% @activity_for_today.dig(:selected_participants).each do |employee_challenge| %>
+    <li> <%= employee_challenge.name %> </li>
+  <% end %>
+</ul>

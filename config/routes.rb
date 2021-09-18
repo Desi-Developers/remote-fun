@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   namespace :challenges do
     resources :attempt, only: :show
   end
+  resources :home, only: :index
 end
 

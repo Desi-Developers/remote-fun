@@ -8,7 +8,10 @@ class EmployeeChallenge < ApplicationRecord
   has_many :poll_votes, dependent: :destroy
   has_many :winners, dependent: :destroy
 
+  delegate :name, to: :employee
+
   scope :for_this_month, -> { where('created_at > ?', Date.current.beginning_of_month.beginning_of_day) }
+  scope :for_this_day, -> { where('employee_challenges.created_at > ?', Date.current.beginning_of_day) }
 
   after_create :send_challenge_email
 
