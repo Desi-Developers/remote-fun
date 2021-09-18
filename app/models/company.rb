@@ -9,4 +9,6 @@ class Company < ApplicationRecord
   # Associations
   has_one_attached :logo
   has_many :employees, dependent: :destroy
+  has_many :company_challenges, dependent: :destroy
+  has_many :challenges, through: :company_challenges
 end

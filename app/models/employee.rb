@@ -12,6 +12,6 @@ class Employee < ApplicationRecord
   # Assocations
   belongs_to :company
   has_one_attached :avatar
-  has_many :employee_challenges
+  has_many :employee_challenges, dependent: :destroy
   has_many :challenges, through: :employee_challenges
 end

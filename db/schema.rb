@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_055758) do
+ActiveRecord::Schema.define(version: 2021_09_18_061550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,19 +43,21 @@ ActiveRecord::Schema.define(version: 2021_09_18_055758) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "comapny_challenges", force: :cascade do |t|
-    t.date "date", null: false
-    t.bigint "challenge_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["challenge_id"], name: "index_comapny_challenges_on_challenge_id"
-  end
-
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "company_challenges", force: :cascade do |t|
+    t.date "date", null: false
+    t.bigint "challenge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
+    t.index ["challenge_id"], name: "index_company_challenges_on_challenge_id"
+    t.index ["company_id"], name: "index_company_challenges_on_company_id"
   end
 
   create_table "employee_challenges", force: :cascade do |t|
@@ -96,7 +98,8 @@ ActiveRecord::Schema.define(version: 2021_09_18_055758) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comapny_challenges", "challenges"
+  add_foreign_key "company_challenges", "challenges"
+  add_foreign_key "company_challenges", "companies"
   add_foreign_key "employee_challenges", "challenges"
   add_foreign_key "employee_challenges", "employees"
   add_foreign_key "employees", "companies"
