@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     sessions: 'employees/sessions'
   }
   resources :employees
+  namespace :challenges do
+    resources :attempt, only: :show
+  end
 end
 
