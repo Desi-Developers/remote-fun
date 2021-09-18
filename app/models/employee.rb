@@ -3,8 +3,7 @@
 # Employee Model
 class Employee < ApplicationRecord
   # Configuration
-  devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable
+  devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
   # Validations
   validates_presence_of :name, :designation
