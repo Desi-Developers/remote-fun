@@ -1,0 +1,6 @@
+- if company_signed_in?
+  = render 'company'
+- elsif employee_signed_in?
+  = render 'employee'
+- else
+  = render 'home'

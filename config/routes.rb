@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :companies
-  devise_for :employees
+  root to: 'dashboard#dashboard'
+  devise_for :companies, controllers: {
+    sessions: 'companies/sessions', registrations: 'companies/registrations'
+  }
+  devise_for :employees, controllers: {
+    sessions: 'employees/sessions', registrations: 'employees/registrations'
+  }
 end
