@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     sessions: 'companies/sessions', registrations: 'companies/registrations'
   }
   devise_for :employees, controllers: {
-    sessions: 'employees/sessions', registrations: 'employees/registrations'
+    sessions: 'employees/sessions'
   }
 end
