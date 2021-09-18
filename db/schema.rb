@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_061550) do
+ActiveRecord::Schema.define(version: 2021_09_18_070844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,11 +90,38 @@ ActiveRecord::Schema.define(version: 2021_09_18_061550) do
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true
   end
 
+  create_table "poll_votes", force: :cascade do |t|
+    t.bigint "poll_id", null: false
+    t.bigint "employee_challenge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_challenge_id"], name: "index_poll_votes_on_employee_challenge_id"
+    t.index ["poll_id"], name: "index_poll_votes_on_poll_id"
+  end
+
+  create_table "polls", force: :cascade do |t|
+    t.integer "p_type", default: 0
+    t.bigint "company_challenge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_challenge_id"], name: "index_polls_on_company_challenge_id"
+  end
+
   create_table "rewards", force: :cascade do |t|
     t.string "monthly", null: false
     t.string "daily", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "winners", force: :cascade do |t|
+    t.bigint "poll_id", null: false
+    t.bigint "employee_challenge_id", null: false
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_challenge_id"], name: "index_winners_on_employee_challenge_id"
+    t.index ["poll_id"], name: "index_winners_on_poll_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -103,4 +130,9 @@ ActiveRecord::Schema.define(version: 2021_09_18_061550) do
   add_foreign_key "employee_challenges", "challenges"
   add_foreign_key "employee_challenges", "employees"
   add_foreign_key "employees", "companies"
+  add_foreign_key "poll_votes", "employee_challenges"
+  add_foreign_key "poll_votes", "polls"
+  add_foreign_key "polls", "company_challenges"
+  add_foreign_key "winners", "employee_challenges"
+  add_foreign_key "winners", "polls"
 end
