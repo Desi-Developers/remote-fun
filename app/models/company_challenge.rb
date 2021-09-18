@@ -8,4 +8,5 @@ class CompanyChallenge < ApplicationRecord
   # Associations
   belongs_to :challenge
   belongs_to :company
+  has_many :polls, dependent: :destroy
 end
