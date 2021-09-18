@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   }
   resources :employees
   resources :videos
+  namespace :challenges do
+    resources :attempt, only: :show
+  end
 end
 
