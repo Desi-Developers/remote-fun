@@ -16,6 +16,6 @@ class EmployeeChallenge < ApplicationRecord
 
   def send_challenge_email
     link = "#{ENV['BASE_URL']}/challenges/attempt/#{challenge.id}"
-    EmployeeMailer.send_challenge_email(self, link).deliver_now
+    EmployeeMailer.send_challenge_email(employee, link).deliver_now
   end
 end
