@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   devise_for :employees, controllers: {
     sessions: 'employees/sessions'
   }
+  resources :employees
 end
+

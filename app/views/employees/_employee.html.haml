@@ -1,0 +1,5 @@
+%tr
+  %td= employee.name
+  %td= employee.designation
+  %td= employee.email
+  %td= link_to 'Delete', employee_path(employee), method: :delete, data: { confirm: 'Are you sure?' }

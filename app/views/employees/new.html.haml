@@ -1,0 +1,23 @@
+= link_to 'All Employees', employees_path
+%h2 New Employee Creation
+= form_for(@employee, url: employees_path, method: :post) do |f|
+  -if @employee.errors.present?
+    %ul
+      - @employee.errors.full_messages.each do |message|
+        %li= message
+  = f.label :name
+  %br
+  = f.text_field :name, autofocus: true
+  %br
+  %br
+  = f.label :designation
+  %br
+  = f.text_field :designation, autofocus: true
+  %br
+  %br
+  = f.label :email
+  %br
+  = f.email_field :email, autofocus: true, autocomplete: "email"
+  %br
+  %br
+  = f.submit "Add new employee"
