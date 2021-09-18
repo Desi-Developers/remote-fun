@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_18_152951) do
+ActiveRecord::Schema.define(version: 2021_09_18_171843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,10 +123,10 @@ ActiveRecord::Schema.define(version: 2021_09_18_152951) do
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.bigint "employee_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["employee_id"], name: "index_videos_on_employee_id"
+    t.bigint "employee_challenge_id"
+    t.index ["employee_challenge_id"], name: "index_videos_on_employee_challenge_id"
   end
 
   create_table "winners", force: :cascade do |t|
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 2021_09_18_152951) do
   add_foreign_key "poll_votes", "employee_challenges"
   add_foreign_key "poll_votes", "polls"
   add_foreign_key "polls", "company_challenges"
-  add_foreign_key "videos", "employees"
+  add_foreign_key "videos", "employee_challenges"
   add_foreign_key "winners", "employee_challenges"
   add_foreign_key "winners", "polls"
 end

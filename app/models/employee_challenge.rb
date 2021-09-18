@@ -7,6 +7,7 @@ class EmployeeChallenge < ApplicationRecord
   belongs_to :challenge
   has_many :poll_votes, dependent: :destroy
   has_many :winners, dependent: :destroy
+  has_one :video, dependent: :destroy
 
   scope :for_this_month, -> { where('created_at > ?', Date.current.beginning_of_month.beginning_of_day) }
 

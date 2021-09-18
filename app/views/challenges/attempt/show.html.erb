@@ -5,3 +5,16 @@ You can attempt this!
 
 <h3>Challenge Description</h3>
 <%= @challenge.description %>
+
+<h2>Record your video</h2>
+<button id="start">Start</button>
+<button id="stop">Stop and save</button>
+
+<form id="record-video-container">
+  <%= hidden_field_tag 'video[title]', @challenge.name %>
+  <%= hidden_field_tag 'video[description]', @challenge.description %>
+  <%= hidden_field_tag 'video[employee_challenge_id]', @employee_challenge.id %>
+</form>
+<div>
+  <video style="border: 1px solid black" id="live" width="300" height="200" autoplay muted></video>
+</div>

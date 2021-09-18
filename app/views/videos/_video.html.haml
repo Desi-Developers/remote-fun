@@ -1,0 +1,5 @@
+%tr
+  %td= video.title
+  %td= video.description
+  %td
+    %video{ autoplay: "", height: "100", loop: "", muted: "muted", src: url_for(video.file), width: "200" }

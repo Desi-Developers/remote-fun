@@ -6,15 +6,15 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[destroy]
 
   def index
-    @videos = current_employee.videos
+    @videos = Video.all
   end
 
   def new
-    @video = current_employee.videos.new
+    @video = Video.new
   end
 
   def create
-    @video = current_employee.videos.new(video_params)
+    @video = Video.new(video_params)
     if @video.save
       redirect_to videos_path, notice: 'Video uploaded successfully'
     else
@@ -31,7 +31,7 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :file)
+    params.require(:video).permit(:title, :description, :file, :employee_challenge_id)
   end
 
   def set_video
