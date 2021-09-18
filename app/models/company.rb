@@ -2,6 +2,9 @@
 
 # Company Model
 class Company < ApplicationRecord
+  # Configuration
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+
   # Validations
   validates_presence_of :name, :email
   validates_uniqueness_of :email
