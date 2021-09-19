@@ -3,8 +3,8 @@
     <h3 class="mt-2 ml-2 p-3">Remote Fun</h3>
     <ul>
       <li class="nav-link"><%= link_to 'Dashboard', root_path %></li>
-      <li class="nav-link"><%= link_to 'Challenges & Poll', root_path %></li>
-      <li class="nav-link"><%= link_to 'Winners', root_path %></li>
+      <li class="nav-link"><%= link_to 'Challenges & Poll', activities_dashboard_index_path %></li>
+      <li class="nav-link"><%= link_to 'Winners', winners_dashboard_index_path %></li>
       <li class="nav-link">
         <%= link_to 'Logout', destroy_company_session_path, method: :delete, data: { confirm: 'Are you sure?' } %>
       </li>
