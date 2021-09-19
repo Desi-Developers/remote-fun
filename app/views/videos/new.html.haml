@@ -1,12 +1,16 @@
-.form-inputs
-  -if @video.errors.present?
-    %ul
-      - @video.errors.full_messages.each do |message|
-        %li= message
-  = form_for(@video, url: videos_path, method: :post) do |f|
-    = f.label :title
-    = f.text_field :title
-    = f.label :description
-    = f.text_field :description
-    = f.file_field :file, required: true, accept: "video/*"
-    = f.submit
+.container
+  %h3.mt-3 Upload a new video
+  %hr
+  .form-inputs
+    -if @video.errors.present?
+      %ul
+        - @video.errors.full_messages.each do |message|
+          %li= message
+    = form_for(@video, url: videos_path, method: :post) do |f|
+      = f.label :title
+      = f.text_field :title, class: 'form-control form-control-sm mt-2'
+      = f.label :description
+      = f.text_field :description, class: 'form-control form-control-sm mt-2'
+      = f.label :upload_file
+      = f.file_field :file, required: true, accept: "video/*", class: 'form-control form-control-sm mt-2'
+      = f.submit class: 'btn btn-primary btn-sm mt-2'
