@@ -3,10 +3,11 @@
 Rails.application.routes.draw do
   root to: 'dashboard#dashboard'
   devise_for :companies, controllers: {
-    sessions: 'companies/sessions', registrations: 'companies/registrations'
+    sessions: 'companies/sessions', registrations: 'companies/registrations',
+    passwords: 'companies/passwords'
   }
   devise_for :employees, controllers: {
-    sessions: 'employees/sessions'
+    sessions: 'employees/sessions', passwords: 'employees/passwords'
   }
   resources :employees
   resources :videos
