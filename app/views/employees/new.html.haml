@@ -1,23 +1,19 @@
-= link_to 'All Employees', employees_path
-%h2 New Employee Creation
+= link_to 'All Employees', employees_path, class: 'btn btn-primary btn-sm mt-2'
+= link_to 'Dashboard', root_path, class: 'btn btn-primary btn-sm mt-2'
+%hr
+%h4 New Employee Creation
 = form_for(@employee, url: employees_path, method: :post) do |f|
   -if @employee.errors.present?
     %ul
       - @employee.errors.full_messages.each do |message|
         %li= message
+  .form-group
   = f.label :name
-  %br
-  = f.text_field :name, autofocus: true, class: 'form-control'
-  %br
-  %br
+  = f.text_field :name, autofocus: true, class: 'form-control form-control-sm'
+  .form-group
   = f.label :designation
-  %br
-  = f.text_field :designation, autofocus: true
-  %br
-  %br
+  = f.text_field :designation, autofocus: true, class: 'form-control form-control-sm'
+  .form-group
   = f.label :email
-  %br
-  = f.email_field :email, autofocus: true, autocomplete: "email"
-  %br
-  %br
-  = f.submit "Add new employee"
+  = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-sm'
+  = f.submit "Add new employee", class: 'btn btn-primary btn-sm mt-2'

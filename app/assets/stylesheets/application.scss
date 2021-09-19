@@ -16,5 +16,10 @@
 @import "bootstrap/scss/bootstrap";
 
 body {
-  background: #EFEFEF;
+  background: #F4F1EC;
+}
+
+#alert-container {
+  margin-top: 10px;
+  float: right;
 }

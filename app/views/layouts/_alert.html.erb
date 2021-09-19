@@ -1,0 +1,22 @@
+<% if notice.present? %>
+  <div id="alert-container" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong><%= notice %></strong>
+    <button onClick="remove_alert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<% if alert.present? %>
+  <div id="alert-container" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong><%= alert %></strong>
+    <button onClick="remove_alert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<script>
+  function remove_alert(){
+    document.getElementById("alert-container").remove()
+  }
+</script>

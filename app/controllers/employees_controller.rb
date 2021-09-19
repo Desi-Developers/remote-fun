@@ -26,7 +26,7 @@ class EmployeesController < ApplicationController
 
   def destroy
     if @employee.destroy
-      redirect_to employees_path, notice: 'Employee deleted successfullys'
+      redirect_to request.referer, notice: 'Employee deleted successfully'
     end
   end
 
