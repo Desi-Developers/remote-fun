@@ -124,3 +124,23 @@ Rewards examples are given in this [section](#example-rewards)
 - Git (for versioning)
 - Meet, Skype, Slack & Whatsapp (for team communication)
 
+## Challenges we ran into
+
+- At the 11th hour we lost our frontend dev due to his sickness, and we needed to complete that 
+  part on ourselves.
+  
+## Accomplishments that we're proud of
+
+- We, as a three member team are able to go this far in this hackfest
+  along with handling all backend, front-end and communication remotely.
+
+## What we learned
+
+- Time Management.
+- Team Communication.
+- Satisfaction of resolving a global issue.
+
+## What's next for Remote Fun - Desi Developers
+
+- We are planning to extend this to a full fledge product. We have already implemented the figma design
+  which we will show you in the demo.
