@@ -1,5 +1,4 @@
-%h1 This is the Home page of the application.
-%ul
-  %li= link_to 'Company Sign In', new_company_session_path
-  %li= link_to 'Company Sign Up', new_company_registration_path
-  %li= link_to 'Employee Sign In', new_employee_session_path
+%h3.mt-2 Home Page
+= link_to 'Company Sign In', new_company_session_path, class: 'btn btn-primary btn-sm mt-2'
+= link_to 'Company Sign Up', new_company_registration_path, class: 'btn btn-primary btn-sm mt-2'
+= link_to 'Employee Sign In', new_employee_session_path, class: 'btn btn-primary btn-sm mt-2'
