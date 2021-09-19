@@ -7,4 +7,8 @@ class DashboardController < ApplicationController
       @employees = current_company.employees
     end
   end
+
+  def winners; end
+
+  def activities; end
 end

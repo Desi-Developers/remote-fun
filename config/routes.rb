@@ -14,5 +14,12 @@ Rails.application.routes.draw do
     resources :attempt, only: :show
   end
   resources :home, only: :index
+
+  resources :dashboard do
+    collection do
+      get :winners
+      get :activities
+    end
+  end
 end
 
