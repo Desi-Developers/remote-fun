@@ -1,14 +1,14 @@
-You can attempt this!
+<h5 class="mark mt-2">You can attempt this!</h5>
 
-<h1>Challenge Name</h1>
+<h3>Challenge Name</h3>
 <%= @challenge.name %>
 
 <h3>Challenge Description</h3>
 <%= @challenge.description %>
 
-<h2>Record your video</h2>
-<button id="start">Start</button>
-<button id="stop">Stop and save</button>
+<h4>Record your video</h4>
+<button id="start" class="btn btn-primary btn-sm m-2">Start</button>
+<button id="stop" class="btn btn-primary btn-sm m-2">Stop and save</button>
 
 <form id="record-video-container">
   <%= hidden_field_tag 'video[title]', @challenge.name %>
