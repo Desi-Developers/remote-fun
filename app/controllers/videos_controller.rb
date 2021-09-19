@@ -6,7 +6,7 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[destroy]
 
   def index
-    @videos = Video.all
+    @videos = current_employee.videos
   end
 
   def new
