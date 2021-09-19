@@ -1,0 +1,14 @@
+.dashboard {
+  display: flex;
+  justify-content: start;
+  .navigation {
+    width: 15em;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  .container {
+    margin-left: 16em;
+  }
+}

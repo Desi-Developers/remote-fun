@@ -1,2 +1,5 @@
-%h1 Company Dashboard
-= link_to 'Logout', destroy_company_session_path, method: :delete
+%div.dashboard
+  %div.navigation
+    = render partial: 'dashboard/navigation'
+  %div.container
+    %h1 Dashboard
